@@ -1,0 +1,21 @@
+<html>
+<head>
+<title> PROJECT </title>
+</head>
+<body>
+
+
+<h1 style="display: inline"> AMAZON PRICE ANALYZER </h1>
+<div style="display: inline; position: absolute; right: 10px;"> <a href="/">Home</a></div><br><br>
+
+
+{% block content %}
+<p> Enter the url of the product to analyze </p>
+<form action="http://localhost:5000/result"  method="POST">
+<p><input type = "url" name= "Name" > </p>
+<input type="submit" value="Analyze">
+</form>
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<script type = "text/javascript" >
+window.onload = function () {
+   var dataPoints = [];
+   var chart = new CanvasJS.Chart("chartContainer", {
+
+         theme: "theme3",
+         title : {
+             text : " Price History "
+            },
+
+         axisX: {
+            title:"TIMELINE",
+         labelFormatter: function (e) {
+            return CanvasJS.formatDate( e.value, "DD MMM YYYY");
+            },
+            interval:1,
+            intervalType:"day",
+         <!--   gridThickness:1,  -->
+         },
+
+         axisY:
+         {
+            title: "PRICE",
+            includeZero: false
+         },
+
+         data : [{
+                 type : "line",
+                 dataPoints : dataPoints
+             }
+         ]
+               
+      });
+
+   {% for result in results %}
+    
+      dataPoints.push({x: new Date({{ result.year }}, {{ result.month }}, {{ result.date}}),y: {{ result.price }}})
+
+   {% endfor %}
+   chart.render();
+}   
+</script>
+<script type = "text/javascript" src = "canvasjs.min.js" >  </script>
+</head>
+<body>  
+{% extends "home.html" %}
+{% block content %}
+<br>
+   <table border = 1>
+         <tr>
+             <td> PRODUCT TITLE </td>
+              <td> {{ details.title }} </td>
+         </tr>
+
+         <tr>
+            <td> LATEST PRICE </td>
+            <td> {{ details.price }} </td>
+         </tr>
+
+         <tr>
+            <td> ASIN </td>
+            <td> {{ details.id }} </td>
+         </tr>
+   </table>
+<br>
+<div id = "chartContainer" style = "height: 300px; width: 100%;" />
+{% endblock %} 
+</body>
+</html>
