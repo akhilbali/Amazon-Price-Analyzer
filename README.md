@@ -8,7 +8,7 @@
 
 <h3>System Requirements</h3>
 <p>The system must have a Python3 interpreter and MySQL database server.The following python modules also need to be supported by the system:</p>
-1. Flask(a micro-web framework)
+1. Flask(a micro-web framework)</br>
 2. flaskext.mysql
 3. pymysql(sudo pip install pymysql)
 4. bs4 (BeautifulSoup module)
