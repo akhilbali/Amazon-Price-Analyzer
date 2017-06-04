@@ -9,11 +9,11 @@
 <h3>System Requirements</h3>
 <p>The system must have a Python3 interpreter and MySQL database server.The following python modules also need to be supported by the system:</p>
 1. Flask(a micro-web framework)</br>
-2. flaskext.mysql
-3. pymysql(sudo pip install pymysql)
-4. bs4 (BeautifulSoup module)
-5. urllib
-6. requests
+2. flaskext.mysql</br>
+3. pymysql(sudo pip install pymysql)</br>
+4. bs4 (BeautifulSoup module)</br>
+5. urllib</br>
+6. requests</br>
 
 <h3>How to Run</h3>
 <p>Make changes in the "main.py" script pretaining to database configuration,base url(the url from which the application starts crawling) and the depth(the maximum depth upto which the crawler crawls).</p>
